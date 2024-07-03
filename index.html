@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annette's Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #e0e0e0;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-left: 4.5em;
+        }
+
+        header {
+            padding: 2em 0;
+            white-space: normal;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #e0e0e0;
+            padding-left: 5em;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-start;
+            list-style: none;
+            padding-top: 1em;
+        }
+
+        nav li {
+            margin-right: 4em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6C6C6C;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #555;
+        }
+
+        main {
+            display: flex;
+            padding-top: 8em;
+            white-space: nowrap;
+            margin-left: 1em;
+        }
+
+        .intro, .gallery {
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal;
+            color: #6C6C6C;
+        }
+
+        .intro {
+            width: 400px;
+            text-align: left;
+            margin-right: 7em;
+            margin-top: 15em;
+        }
+
+        .intro h1 {
+            font-size: 2.5em;
+            line-height: 1.2;
+            margin-bottom: 0.8em;
+        }
+
+        .intro p {
+            font-size: 1em;
+            margin-bottom: 1.5em;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5em 1.5em;
+            background-color: transparent;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            position: relative;
+            transition: color 0.3s;
+            pointer-events: auto;
+            margin-top: 0.5em;
+        }
+
+        .btn::before {
+            content: "\2192";
+            display: block;
+            position: absolute;
+            left: -0.2em;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+            pointer-events: none;
+        }
+
+        .btn:hover {
+            color: #555;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 1.7em;
+            overflow-x: auto;
+            padding-bottom: 1em;
+            margin-top: 1em;
+            margin-left: 3em;
+        }
+
+        .gallery-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            flex: none;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: filter 0.3s;
+        }
+
+        .gallery-item p {
+            position: absolute;
+            bottom: 0.5em;
+            left: 1em;
+            font-size: 1.5em;
+            color: #fff;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            margin: 0;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(70%);
+        }
+
+        .gallery-item:hover p {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        ::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="about.html">夢境主人</a></li>
+                <li><a href="page1.html">平面的夢</a></li> 
+                <li><a href="page2.html">立體的夢</a></li>
+                <li><a href="page3.html">角色的夢</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Hi!<br>I'm Annette.</h1>
+            <p>歡迎來到我的夢境！<br>在這裡你可以參觀我的夢境畫廊。</p>
+            <a href="about.html" class="btn">關於我</a>
+        </section>
+
+        <section class="gallery">
+            <a href="page1.html" class="gallery-item">
+                <img src="illustration.png" alt="平面的夢">
+                <p>平面的夢</p>
+            </a>
+            <a href="page2.html" class="gallery-item">
+                <img src="3D.png" alt="立體的夢">
+                <p>立體的夢</p>
+            </a>
+            <a href="page3.html" class="gallery-item">
+                <img src="character.png" alt="角色的夢">
+                <p>角色的夢</p>
+            </a>
+        </section>
+    </main>
+</body>
+</html>
